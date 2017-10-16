@@ -1,0 +1,24 @@
+@import "all_variables_and_mixins"
+
+\:host
+  display: flex
+  flex-flow: column
+  height: 100%
+
+  .content-container
+    display: flex
+    height: 100%
+
+.show-on-mobile-only, .show-on-desktop-only
+  display: none
+
+.show-on-mobile-only
+  @include media-breakpoint-down(sm)
+    display: block
+
+.show-on-desktop-only
+  @include media-breakpoint-up(md)
+    display: block
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched
+  border: 1px solid red
