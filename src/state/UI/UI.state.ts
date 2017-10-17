@@ -1,11 +1,19 @@
 export interface State {
   sidePanel: {
-    isOpen: Boolean
+    isOpen: Boolean,
+  };
+  sidePanelNav: {
+    isCollapsed: Boolean,
+    openClass: string
   };
 }
 
 export const intitialState: State = {
   sidePanel: {
-    isOpen: true
+    isOpen: true,
+  },
+  sidePanelNav: {
+    openClass: 'collapse',
+    isCollapsed: true
   }
 };

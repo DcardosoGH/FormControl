@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
+import * as UiActions from '../../../state/UI/UI.actions';
 
 import { State } from '../../../state/UI/UI.state';
 
@@ -20,6 +21,10 @@ export class SidePanelComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  toggleOpen() {
+    this.store.dispatch(new UiActions.ToggleNavOpen());
   }
 
 }

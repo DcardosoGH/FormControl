@@ -11,14 +11,14 @@ aside
 #sidebar
   .list-group-item
     border-radius: 0
-    background-color: rgba(0,0,0,0.5)
+    background-color: #333
     color: #ccc
     border-left: 0
     border-right: 0
     border-color: #2c2c2c
     white-space: nowrap
     &:not(.collapsed)
-      background-color: rgba(0,0,0,0.5)
+      background-color: #222
   .list-group
     .list-group-item
       &[aria-expanded="false"]::after
@@ -28,7 +28,7 @@ aside
         text-align: right
         padding-left: 5px
       &[aria-expanded="true"]
-        background-color: rgba(0,0,0,0.5)
+        background-color: #222
         &::after
           content: " \f0da"
           font-family: FontAwesome
@@ -59,3 +59,4 @@ aside
     -webkit-transition-property: width
     -o-transition-property: width
     transition-property: width
+

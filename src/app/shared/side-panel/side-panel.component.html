@@ -1,7 +1,8 @@
 <aside [ngClass]="'is-open-'+(UI$ | async).sidePanel.isOpen">
-    <div class="list-group panel" id="sidebar">
-      <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Item 1</span> </a>
-      <div class="collapse" id="menu1">
+  <div id="sidebar">
+    <div class="list-group panel">
+      <a (click)="toggleOpen()" href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Item 1</span> </a>
+      <div [ngClass]="(UI$ | async).sidePanelNav.openClass" id="menu1" #menu1>
           <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
           <div class="collapse" id="menu1sub1">
               <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
@@ -42,6 +43,7 @@
       <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Link</span></a>
       <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="hidden-sm-down">Link</span></a>
       <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="hidden-sm-down">Link</span></a>
+  </div>
   </div>
   <pre
   style="overflow: hidden"
