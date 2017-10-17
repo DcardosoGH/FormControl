@@ -5,16 +5,16 @@
       <div [ngClass]="(UI$ | async).sidePanelNav.ParentNav.openClass" id="menu1" #menu1>
           <a (click)="toggleOpenChild1()" href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
           <div [ngClass]="(UI$ | async).sidePanelNav.Child1Nav.openClass" id="menu1sub1">
-              <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
-              <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>
+              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
+              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>
           </div>
-              <a href="#" class="list-group-item" data-parent="#menu1">Subitem 2</a>
-              <a href="#" class="list-group-item" data-parent="#menu1">Subitem 3</a>
+              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1">Subitem 2</a>
+              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1">Subitem 3</a>
           </div>
-      <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 2</span></a>
-      <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 3</span></a>
-      <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">Item 4</span></a>
-      <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Item 5</span></a>
+      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 2</span></a>
+      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 3</span></a>
+      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">Item 4</span></a>
+      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Item 5</span></a>
   </div>
   </div>
   <hr>
