@@ -3,12 +3,21 @@ aside
   height: 100%
   width: 0px
   transition: width 0.3s linear
-  overflow: hidden
+  overflow: auto
 
   &.is-open-true
-    width: 300px
+    width: 250px
+
+.open
+  transition: height 0.3s linear
+  height: 149px;
+
+.collapse
+  transition: height 0.3s linear
+  height: 0px;
 
 #sidebar
+  position: flex
   .list-group-item
     border-radius: 0
     background-color: #333
