@@ -3,9 +3,15 @@ export interface State {
     isOpen: Boolean,
   };
   sidePanelNav: {
-    isCollapsed: Boolean,
-    openClass: string
-  };
+    ParentNav: {
+      isCollapsed: Boolean,
+      openClass: string
+    }
+    Child1Nav: {
+      isCollapsed: Boolean,
+      openClass: string
+    }
+ };
 }
 
 export const intitialState: State = {
@@ -13,7 +19,13 @@ export const intitialState: State = {
     isOpen: true,
   },
   sidePanelNav: {
-    openClass: 'collapse',
-    isCollapsed: true
+    ParentNav: {
+      openClass: 'collapse',
+      isCollapsed: true
+    },
+    Child1Nav: {
+      openClass: 'collapse',
+      isCollapsed: true
+    }
   }
 };

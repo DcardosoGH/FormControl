@@ -7,7 +7,7 @@ import { State } from '../../state/todo-list/todo-list.state';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.sass']
 })
 export class TodoListComponent implements OnInit {
 

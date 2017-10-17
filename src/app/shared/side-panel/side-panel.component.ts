@@ -23,8 +23,12 @@ export class SidePanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleOpen() {
-    this.store.dispatch(new UiActions.ToggleNavOpen());
+  toggleOpenpParent() {
+    this.store.dispatch(new UiActions.ToggleNavOpenParent());
+  }
+
+  toggleOpenChild1() {
+    this.store.dispatch(new UiActions.ToggleNavOpenChild1());
   }
 
 }

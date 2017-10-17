@@ -12,16 +12,30 @@ export default function todoListReducer(state = intitialState, action: Action): 
             return newstate;
         }
 
-        case UIActions.TOGGLE_NAV_OPEN: {
+        case UIActions.TOGGLE_NAV_OPEN_PARENT: {
           const newState = Object.assign({}, state);
-          if (newState.sidePanelNav.isCollapsed) {
-            newState.sidePanelNav.openClass = '';
-            newState.sidePanelNav.openClass = 'open';
-            newState.sidePanelNav.isCollapsed = !newState.sidePanelNav.isCollapsed;
+          if (newState.sidePanelNav.ParentNav.isCollapsed) {
+            newState.sidePanelNav.ParentNav.openClass = '';
+            newState.sidePanelNav.ParentNav.openClass = 'open';
+            newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
           } else {
-            newState.sidePanelNav.openClass = '';
-            newState.sidePanelNav.openClass = 'collapse';
-            newState.sidePanelNav.isCollapsed = !newState.sidePanelNav.isCollapsed;
+            newState.sidePanelNav.ParentNav.openClass = '';
+            newState.sidePanelNav.ParentNav.openClass = 'collapse';
+            newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
+          }
+            return newState;
+        }
+
+        case UIActions.TOGGLE_NAV_OPEN_CHILD_1: {
+          const newState = Object.assign({}, state);
+          if (newState.sidePanelNav.Child1Nav.isCollapsed) {
+            newState.sidePanelNav.Child1Nav.openClass = '';
+            newState.sidePanelNav.Child1Nav.openClass = 'open';
+            newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
+          } else {
+            newState.sidePanelNav.Child1Nav.openClass = '';
+            newState.sidePanelNav.Child1Nav.openClass = 'collapse';
+            newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
           }
             return newState;
         }

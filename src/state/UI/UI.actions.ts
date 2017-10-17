@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 
 export const TOGGLE_SIDE_PANEL     = '[UI] TOGGLE_SIDE_PANEL';
 export const CLOSE_SIDE_PANEL     = '[UI] CLOSE_SIDE_PANEL';
-export const TOGGLE_NAV_OPEN = '[UI] TOGGLE NAV_OPEN';
+export const TOGGLE_NAV_OPEN_PARENT = '[UI] TOGGLE_NAV_OPEN_PARENT';
+export const TOGGLE_NAV_OPEN_CHILD_1 = '[UI] TOGGLE_NAV_OPEN_CHILD_1';
 
 
 export class ToggleSidePanel implements Action {
@@ -10,10 +11,18 @@ export class ToggleSidePanel implements Action {
   constructor() { }
 }
 
-export class ToggleNavOpen implements Action {
-  readonly type = TOGGLE_NAV_OPEN;
+export class ToggleNavOpenParent implements Action {
+  readonly type = TOGGLE_NAV_OPEN_PARENT;
 }
+
+export class ToggleNavOpenChild1 implements Action {
+  readonly type = TOGGLE_NAV_OPEN_CHILD_1;
+}
+
+
+
 
 export type All
   = ToggleSidePanel |
-    ToggleNavOpen;
+  ToggleNavOpenParent |
+  ToggleNavOpenChild1;
