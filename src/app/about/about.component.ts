@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
   $Form: Observable<State>;
 
   constructor(private store: Store<any>) {
-    this.$Form = this.store.select('formStore');
+    this.$Form = this.store.select('aboutFormStore');
    }
 
   ngOnInit() {

@@ -6,6 +6,6 @@ export interface State {
 
 export const intitialState: State = {
   sidePanel: {
-    isOpen: false
+    isOpen: true
   }
 };
