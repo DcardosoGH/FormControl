@@ -36,51 +36,32 @@ aside
     &:not(.collapsed)
       background-color: #222
 
-  .list-group
 
-    .list-group-item
-      &[aria-expanded="false"]::after
-        content: " \f0d7"
-        font-family: FontAwesome
-        display: inline
-        text-align: right
-        padding-left: 5px
 
-      &[aria-expanded="true"]
-        background-color: #222
-        &::after
-          content: " \f0da"
-          font-family: FontAwesome
-          display: inline
-          text-align: right
-          padding-left: 5px
+  .dropdown-container
+    .dropdown
+      transition: 0.3s linear all
 
-    .collapse
-      .list-group-item
-        padding-left: 20px
+    .dropdown-button-custom
+      display: flex
+      justify-content: space-between
+      align-items: center
 
-      > .collapse
-        .list-group-item
-          padding-left: 30px
+    &.open
+      .up-arrow
+        display: none
 
-        > .collapse .list-group-item
-          padding-left: 40px
+      .dropdown
+        max-height: 300px
 
-  &.collapse
-    -webkit-transition-timing-function: ease
-    -o-transition-timing-function: ease
-    transition-timing-function: ease
-    -webkit-transition-duration: .2s
-    -o-transition-duration: .2s
-    transition-duration: .2s
+    &.closed
+      .down-arrow
+        display: none
 
-  &.collapsing
-    opacity: 0.8
-    width: 0
-    -webkit-transition-timing-function: ease-in
-    -o-transition-timing-function: ease-in
-    transition-timing-function: ease-in
-    -webkit-transition-property: width
-    -o-transition-property: width
-    transition-property: width
+      .dropdown
+        max-height: 0
+
+
+
+
 

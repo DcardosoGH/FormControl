@@ -15,8 +15,11 @@ export const intitialState: State = {
     isOpen: true,
     dropDownStates: [
       {
-        open: true,
+        open: false,
         children: []
+      },
+      {
+        open: false
       },
     ]
   }
