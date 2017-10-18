@@ -12,36 +12,18 @@ export default function todoListReducer(state = intitialState, action: Action): 
             return newstate;
         }
 
-        case UIActions.TOGGLE_NAV_OPEN_PARENT: {
-          const newState = Object.assign({}, state);
-          if (newState.sidePanel.sidePanelNav.ParentNav.isCollapsed) {
-            newState.sidePanel.sidePanelNav.ParentNav.openClass = '';
-            newState.sidePanel.sidePanelNav.ParentNav.openClass = 'open';
-            newState.sidePanel.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanel.sidePanelNav.ParentNav.isCollapsed;
-            newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded;
-          } else {
-            newState.sidePanel.sidePanelNav.ParentNav.openClass = '';
-            newState.sidePanel.sidePanelNav.ParentNav.openClass = 'collapse';
-            newState.sidePanel.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanel.sidePanelNav.ParentNav.isCollapsed;
-            newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded;
-          }
-            return newState;
-        }
+        case UIActions.TOGGLE_OPEN_NAV_DROPDOWN: {
+          // [ HACK ] replace with more effective tecnique
+          const newState = JSON.parse(JSON.stringify(state));
 
-        case UIActions.TOGGLE_NAV_OPEN_CHILD_1: {
-          const newState = Object.assign({}, state);
-          if (newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed) {
-            newState.sidePanel.sidePanelNav.Child1Nav.openClass = '';
-            newState.sidePanel.sidePanelNav.Child1Nav.openClass = 'open';
-            newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed;
-            newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded;
-          } else {
-            newState.sidePanel.sidePanelNav.Child1Nav.openClass = '';
-            newState.sidePanel.sidePanelNav.Child1Nav.openClass = 'collapse';
-            newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed;
-            newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded;
-          }
+          if (!action.payload.j) {
+            // toggle parent
+            newState.sidePanel.dropDownStates[action.payload.i].open = !newState.sidePanel.dropDownStates[action.payload.i].open;
             return newState;
+          } else {
+            // toggle child
+            return newState;
+          }
         }
 
         default: {

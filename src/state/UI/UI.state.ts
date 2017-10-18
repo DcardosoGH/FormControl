@@ -1,35 +1,23 @@
 export interface State {
   sidePanel: {
-    isOpen: Boolean,
-    sidePanelNav: {
-      ParentNav: {
-        isCollapsed: Boolean,
-        openClass: string,
-        ariaExpanded: Boolean
-      }
-    Child1Nav: {
-      isCollapsed: Boolean,
-      openClass: string
-      ariaExpanded: Boolean
-      }
+    isOpen: Boolean;
+    dropDownStates: Array<DropDown>;
   };
- };
+}
+
+export interface DropDown {
+  open: Boolean;
+  children?: Array<any>;
 }
 
 export const intitialState: State = {
   sidePanel: {
     isOpen: true,
-    sidePanelNav: {
-      ParentNav: {
-        openClass: 'collapse',
-        isCollapsed: true,
-        ariaExpanded: false
+    dropDownStates: [
+      {
+        open: true,
+        children: []
       },
-      Child1Nav: {
-        openClass: 'collapse',
-        isCollapsed: true,
-        ariaExpanded: false
-      }
-  }
+    ]
   }
 };
