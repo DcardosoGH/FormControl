@@ -18,10 +18,12 @@ export default function todoListReducer(state = intitialState, action: Action): 
             newState.sidePanelNav.ParentNav.openClass = '';
             newState.sidePanelNav.ParentNav.openClass = 'open';
             newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
+            newState.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanelNav.ParentNav.ariaExpanded;
           } else {
             newState.sidePanelNav.ParentNav.openClass = '';
             newState.sidePanelNav.ParentNav.openClass = 'collapse';
             newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
+            newState.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanelNav.ParentNav.ariaExpanded;
           }
             return newState;
         }
@@ -32,10 +34,12 @@ export default function todoListReducer(state = intitialState, action: Action): 
             newState.sidePanelNav.Child1Nav.openClass = '';
             newState.sidePanelNav.Child1Nav.openClass = 'open';
             newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
+            newState.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanelNav.Child1Nav.ariaExpanded;
           } else {
             newState.sidePanelNav.Child1Nav.openClass = '';
             newState.sidePanelNav.Child1Nav.openClass = 'collapse';
             newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
+            newState.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanelNav.Child1Nav.ariaExpanded;
           }
             return newState;
         }

@@ -9,16 +9,8 @@
     display: flex
     height: 100%
 
-.show-on-mobile-only, .show-on-desktop-only
-  display: none
-
-.show-on-mobile-only
-  @include media-breakpoint-down(sm)
-    display: block
-
-.show-on-desktop-only
-  @include media-breakpoint-up(md)
-    display: block
+  form
+    margin-top: 20px
 
 input.ng-invalid.ng-touched, select.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched
   border: 1px solid red

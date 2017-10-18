@@ -1,20 +1,15 @@
 <aside [ngClass]="'is-open-'+(UI$ | async).sidePanel.isOpen">
   <div id="sidebar">
     <div class="list-group panel">
-      <a (click)="toggleOpenpParent()" href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Item 1</span> </a>
+      <a (click)="toggleOpenpParent()" style="cursor:pointer" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" [attr.aria-expanded]="(UI$ | async).sidePanelNav.ParentNav.ariaExpanded"><i class="fa fa-line-chart"></i> <span class="hidden-sm-down">Item 1</span> </a>
       <div [ngClass]="(UI$ | async).sidePanelNav.ParentNav.openClass" id="menu1" #menu1>
-          <a (click)="toggleOpenChild1()" href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
-          <div [ngClass]="(UI$ | async).sidePanelNav.Child1Nav.openClass" id="menu1sub1">
-              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
-              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>
-          </div>
-              <a style="cursor: pointer" class="list-group-item" data-parent="#menu1">Subitem 2</a>
+          <a (click)="toggleOpenChild1()" href="#menu1sub1" class="list-group-item" data-toggle="collapse">Subitem 1 </a>
+          <a style="cursor: pointer" class="list-group-item" data-parent="#menu1">Subitem 2</a>
               <a style="cursor: pointer" class="list-group-item" data-parent="#menu1">Subitem 3</a>
-          </div>
-      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 2</span></a>
-      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Item 3</span></a>
-      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">Item 4</span></a>
-      <a style="cursor: pointer" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Item 5</span></a>
+      </div>
+      <a style="cursor: pointer" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span></a>
+      <a style="cursor: pointer" routerLinkActive="active" routerLink="/about" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">About</span></a>
+      <a style="cursor: pointer" routerLinkActive="active" routerLink="/todo-list" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Todo List</span></a>
   </div>
   </div>
   <hr>

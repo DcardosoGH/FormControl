@@ -1,49 +1,47 @@
 <app-header [showSidepanelButton]="true"></app-header>
 <div class="container-fluid content-container">
   <div class="row">
-    <div class="col-md-auto">
       <app-side-panel></app-side-panel>
-    </div>
   </div>
-  <div class="col">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <div class="user-data">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" id="email" ngModel email required #email="ngModel">
-          <div *ngIf="!email.valid && email.touched">
-            <span  class="help-block">Please enter a valid email</span>
-            <br>
-            <button (click)="suggestEmail()" type="button" class="btn btn-info">Suggest Email</button>
-          </div>
-          <br>
-        </div>
-        <div class="form-group">
-          <label for="">Password</label>
-          <input type="password" class="form-control" name="password" id="" placeholder="" ngModel required #password>
-        </div>
-        <div class="form-group">
-            <div class="radio" *ngFor="let gender of genders">
-              <label>
-                <input type="radio" name="gender" ngModel="gender" [value]="gender" required>
-                {{gender}}
-              </label>
+  <div class="container content-container">
+    <div class="col">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="user-data">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" ngModel email required #email="ngModel">
+              <div *ngIf="!email.valid && email.touched">
+                <span  class="help-block">Please enter a valid email</span>
+                <br>
+                <button (click)="suggestEmail()" type="button" class="btn btn-info">Suggest Email</button>
+              </div>
+              <br>
             </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" class="form-control" name="password" id="" placeholder="" ngModel required #password>
+            </div>
+            <div class="form-group">
+                <div class="radio" *ngFor="let gender of genders">
+                  <label>
+                    <input type="radio" name="gender" ngModel="gender" [value]="gender" required>
+                    {{gender}}
+                  </label>
+                </div>
+              </div>
           </div>
-      </div>
-      <div class="form-group">
-        <label for="questionAnswer">What is your favorite color?</label>
-        <textarea class="form-control" name="questionAnswer" id="" rows="6" ngModel required></textarea>
-      </div>
-      <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <br>
-    <div col>
-      <div *ngIf="f.submitted">
-        <pre>{{$Form | async | json }}</pre>
-        <pre></pre>
+          <div class="form-group">
+            <label for="questionAnswer">What is your favorite color?</label>
+            <textarea class="form-control" name="questionAnswer" id="" rows="6" ngModel required></textarea>
+          </div>
+          <button [disabled]="!f.valid" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+        <div col>
+          <div *ngIf="f.submitted">
+            <pre>{{$Form | async | json }}</pre>
+        </div>
       </div>
     </div>
-
   </div>
 </div>

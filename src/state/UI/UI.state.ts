@@ -5,11 +5,13 @@ export interface State {
   sidePanelNav: {
     ParentNav: {
       isCollapsed: Boolean,
-      openClass: string
+      openClass: string,
+      ariaExpanded: Boolean
     }
     Child1Nav: {
       isCollapsed: Boolean,
       openClass: string
+      ariaExpanded: Boolean
     }
  };
 }
@@ -21,11 +23,13 @@ export const intitialState: State = {
   sidePanelNav: {
     ParentNav: {
       openClass: 'collapse',
-      isCollapsed: true
+      isCollapsed: true,
+      ariaExpanded: false
     },
     Child1Nav: {
       openClass: 'collapse',
-      isCollapsed: true
+      isCollapsed: true,
+      ariaExpanded: false
     }
   }
 };
