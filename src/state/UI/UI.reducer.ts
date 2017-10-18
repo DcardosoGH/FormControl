@@ -14,32 +14,32 @@ export default function todoListReducer(state = intitialState, action: Action): 
 
         case UIActions.TOGGLE_NAV_OPEN_PARENT: {
           const newState = Object.assign({}, state);
-          if (newState.sidePanelNav.ParentNav.isCollapsed) {
-            newState.sidePanelNav.ParentNav.openClass = '';
-            newState.sidePanelNav.ParentNav.openClass = 'open';
-            newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
-            newState.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanelNav.ParentNav.ariaExpanded;
+          if (newState.sidePanel.sidePanelNav.ParentNav.isCollapsed) {
+            newState.sidePanel.sidePanelNav.ParentNav.openClass = '';
+            newState.sidePanel.sidePanelNav.ParentNav.openClass = 'open';
+            newState.sidePanel.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanel.sidePanelNav.ParentNav.isCollapsed;
+            newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded;
           } else {
-            newState.sidePanelNav.ParentNav.openClass = '';
-            newState.sidePanelNav.ParentNav.openClass = 'collapse';
-            newState.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanelNav.ParentNav.isCollapsed;
-            newState.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanelNav.ParentNav.ariaExpanded;
+            newState.sidePanel.sidePanelNav.ParentNav.openClass = '';
+            newState.sidePanel.sidePanelNav.ParentNav.openClass = 'collapse';
+            newState.sidePanel.sidePanelNav.ParentNav.isCollapsed = !newState.sidePanel.sidePanelNav.ParentNav.isCollapsed;
+            newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded = ! newState.sidePanel.sidePanelNav.ParentNav.ariaExpanded;
           }
             return newState;
         }
 
         case UIActions.TOGGLE_NAV_OPEN_CHILD_1: {
           const newState = Object.assign({}, state);
-          if (newState.sidePanelNav.Child1Nav.isCollapsed) {
-            newState.sidePanelNav.Child1Nav.openClass = '';
-            newState.sidePanelNav.Child1Nav.openClass = 'open';
-            newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
-            newState.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanelNav.Child1Nav.ariaExpanded;
+          if (newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed) {
+            newState.sidePanel.sidePanelNav.Child1Nav.openClass = '';
+            newState.sidePanel.sidePanelNav.Child1Nav.openClass = 'open';
+            newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed;
+            newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded;
           } else {
-            newState.sidePanelNav.Child1Nav.openClass = '';
-            newState.sidePanelNav.Child1Nav.openClass = 'collapse';
-            newState.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanelNav.Child1Nav.isCollapsed;
-            newState.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanelNav.Child1Nav.ariaExpanded;
+            newState.sidePanel.sidePanelNav.Child1Nav.openClass = '';
+            newState.sidePanel.sidePanelNav.Child1Nav.openClass = 'collapse';
+            newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed = !newState.sidePanel.sidePanelNav.Child1Nav.isCollapsed;
+            newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded = ! newState.sidePanel.sidePanelNav.Child1Nav.ariaExpanded;
           }
             return newState;
         }

@@ -2,33 +2,9 @@
   <button
     *ngIf="showSidepanelButton"
     (click)="toggleSidePanel()"
-    class="toggle-sidepanel-button btn btn-dark"
+    class="toggle-sidepanel-button btn btn-dark btn-lg"
   >
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars"></i>  Menu
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLinkActive="active"
-        routerLink="/"
-        [routerLinkActiveOptions]="{exact: true}"
-      >Home</a>
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLinkActive="active"
-        routerLink="/about"
-      >About</a>
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLinkActive="active"
-        routerLink="/todo-list"
-      >Todo List</a>
-    </li>
-  </ul>
+  <a class="navbar-brand mx-auto" href="#">Navbar</a>
 </nav>
