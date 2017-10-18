@@ -33,7 +33,7 @@ import formReducer from './../state/form/form.reducer';
     StoreModule.forRoot({
       todoListStore: todoListReducer,
       UIStore: UIReducer,
-      formStore: formReducer
+      aboutFormStore: formReducer
     }),
     EffectsModule.forRoot([TodoListEffects]),
     StoreDevtoolsModule.instrument(),

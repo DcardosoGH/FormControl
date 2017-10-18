@@ -1,11 +1,23 @@
 export interface State {
   sidePanel: {
-    isOpen: Boolean
+    isOpen: Boolean;
+    dropDownStates: Array<DropDown>;
   };
+}
+
+export interface DropDown {
+  open: Boolean;
+  children?: Array<any>;
 }
 
 export const intitialState: State = {
   sidePanel: {
-    isOpen: false
+    isOpen: true,
+    dropDownStates: [
+      {
+        open: true,
+        children: []
+      },
+    ]
   }
 };

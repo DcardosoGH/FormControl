@@ -1,9 +1,86 @@
+a
+  cursor: pointer
+
 aside
-  background: rgba(0,0,0,0.5)
+  background: #333
   height: 100%
   width: 0px
   transition: width 0.3s linear
-  overflow: hidden
+  overflow: auto
+
+  .toggle-sidepanel-button
+    cursor: pointer
 
   &.is-open-true
     width: 300px
+
+  pre
+    color: white
+
+.sidebar
+  position: flex
+  overflow-y: auto
+
+  .list-group-item
+    border-radius: 0
+    background-color: #222
+    color: white
+    border-left: 0
+    border-right: 0
+    border-color: #2c2c2c
+    white-space: nowrap
+
+    &.active
+      background-color: gray
+
+    &:not(.collapsed)
+      background-color: #222
+
+  .list-group
+
+    .list-group-item
+      &[aria-expanded="false"]::after
+        content: " \f0d7"
+        font-family: FontAwesome
+        display: inline
+        text-align: right
+        padding-left: 5px
+
+      &[aria-expanded="true"]
+        background-color: #222
+        &::after
+          content: " \f0da"
+          font-family: FontAwesome
+          display: inline
+          text-align: right
+          padding-left: 5px
+
+    .collapse
+      .list-group-item
+        padding-left: 20px
+
+      > .collapse
+        .list-group-item
+          padding-left: 30px
+
+        > .collapse .list-group-item
+          padding-left: 40px
+
+  &.collapse
+    -webkit-transition-timing-function: ease
+    -o-transition-timing-function: ease
+    transition-timing-function: ease
+    -webkit-transition-duration: .2s
+    -o-transition-duration: .2s
+    transition-duration: .2s
+
+  &.collapsing
+    opacity: 0.8
+    width: 0
+    -webkit-transition-timing-function: ease-in
+    -o-transition-timing-function: ease-in
+    transition-timing-function: ease-in
+    -webkit-transition-property: width
+    -o-transition-property: width
+    transition-property: width
+

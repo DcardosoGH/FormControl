@@ -6,7 +6,7 @@ import * as TodoListActions from '../../../state/todo-list/todo-list.actions';
 @Component({
   selector: 'app-todo-adder',
   templateUrl: './todo-adder.component.html',
-  styleUrls: ['./todo-adder.component.scss']
+  styleUrls: ['./todo-adder.component.sass']
 })
 export class TodoAdderComponent implements OnInit {
 
