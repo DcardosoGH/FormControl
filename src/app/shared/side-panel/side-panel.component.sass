@@ -1,5 +1,5 @@
 aside
-  background: rgba(0,0,0,0.5)
+  background: #333
   height: 100%
   width: 0px
   transition: width 0.3s linear
@@ -8,17 +8,22 @@ aside
   &.is-open-true
     width: 250px
 
+  pre
+    color: white
+
 #sidebar
   position: flex
   overflow-y: auto
   .list-group-item
     border-radius: 0
-    background-color: #333
+    background-color: #222
     color: #ccc
     border-left: 0
     border-right: 0
     border-color: #2c2c2c
     white-space: nowrap
+    &.active
+      background-color: gray
     &:not(.collapsed)
       background-color: #222
   .list-group
