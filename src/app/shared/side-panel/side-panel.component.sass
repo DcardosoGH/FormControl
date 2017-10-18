@@ -1,3 +1,6 @@
+a
+  cursor: pointer
+
 aside
   background: #333
   height: 100%
@@ -14,9 +17,10 @@ aside
   pre
     color: white
 
-#sidebar
+.sidebar
   position: flex
   overflow-y: auto
+
   .list-group-item
     border-radius: 0
     background-color: #222
@@ -25,11 +29,15 @@ aside
     border-right: 0
     border-color: #2c2c2c
     white-space: nowrap
+
     &.active
       background-color: gray
+
     &:not(.collapsed)
       background-color: #222
+
   .list-group
+
     .list-group-item
       &[aria-expanded="false"]::after
         content: " \f0d7"
@@ -37,6 +45,7 @@ aside
         display: inline
         text-align: right
         padding-left: 5px
+
       &[aria-expanded="true"]
         background-color: #222
         &::after
@@ -45,14 +54,18 @@ aside
           display: inline
           text-align: right
           padding-left: 5px
+
     .collapse
       .list-group-item
         padding-left: 20px
+
       > .collapse
         .list-group-item
           padding-left: 30px
+
         > .collapse .list-group-item
           padding-left: 40px
+
   &.collapse
     -webkit-transition-timing-function: ease
     -o-transition-timing-function: ease
@@ -60,6 +73,7 @@ aside
     -webkit-transition-duration: .2s
     -o-transition-duration: .2s
     transition-duration: .2s
+
   &.collapsing
     opacity: 0.8
     width: 0
