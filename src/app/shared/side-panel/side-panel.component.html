@@ -74,33 +74,48 @@
         </div>
       </span>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/"
-        [routerLinkActiveOptions]="{exact: true}"
-        class="list-group-item collapsed"
+      <span
+        class="dropdown-container"
       >
-        <i class="fa fa-home"></i>
-        <span class="hidden-sm-down">Home</span>
-      </a>
+        <a
+          routerLinkActive="active"
+          routerLink="/"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="dropdown-button-custom list-group-item collapsed"
+        >
+          <i class="fa fa-home"></i>
+          <span class="hidden-sm-down">Home</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </span>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/about"
-        class="list-group-item collapsed"
+      <span
+        class="dropdown-container"
       >
-        <i class="fa fa-film"></i>
-        <span class="hidden-sm-down">About</span>
-      </a>
+        <a
+          routerLinkActive="active"
+          routerLink="/about"
+          class="dropdown-button-custom list-group-item collapsed"
+        >
+          <i class="fa fa-film"></i>
+          <span class="hidden-sm-down">About</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </span>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/todo-list"
-        class="list-group-item collapsed"
+      <span
+        class="dropdown-container"
       >
-        <i class="fa fa-list"></i>
-        <span class="hidden-sm-down">Todo List</span>
-      </a>
+        <a
+          routerLinkActive="active"
+          routerLink="/todo-list"
+          class="dropdown-button-custom list-group-item collapsed"
+        >
+          <i class="fa fa-list"></i>
+          <span class="hidden-sm-down">Todo List</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </span>
 
     </div>
   </div>
