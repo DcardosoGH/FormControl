@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: 'todo-list', loadChildren: './todo-list/todo-list.module#TodoListModule' },
+  { path: 'graph', loadChildren: './graph/graph.module#GraphModule' },
 
   { path: '**',   redirectTo: '', pathMatch: 'full' }
 ];
