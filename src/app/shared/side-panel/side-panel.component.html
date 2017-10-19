@@ -4,31 +4,75 @@
       <img class="responsive img-round" src="">
     </div>
     <div class="list-group panel">
-      <a
-        (click)="toggleOpenDropDown(0)"
-        class="list-group-item collapsed"
-      >
-        <i class="fa fa-line-chart"></i>
-        <span class="hidden-sm-down">Item 1</span>
-      </a>
-      <div
+      <span
+        class="dropdown-1 dropdown-container"
         [ngClass]="
           (UI$ | async).sidePanel.dropDownStates[0].open
           ? 'open'
-          : 'collapse'
+          : 'closed'
         "
       >
         <a
-          (click)="toggleOpenChild1()"
-          class="list-group-item"
-        >Subitem 1 </a>
+          (click)="toggleOpenDropDown(0)"
+          class="dropdown-button-custom list-group-item collapsed"
+        >
+          <i class="fa fa-line-chart"></i>
+          <span class="hidden-sm-down">Item 1</span>
+          <div class="toggle-arrow">
+            <i class="fa fa-angle-up up-arrow"></i>
+            <i class="fa fa-angle-down down-arrow"></i>
+          </div>
+        </a>
+        <div
+          class="dropdown"
+        >
+          <a
+            (click)="toggleOpenChild1()"
+            class="list-group-item"
+          >Subitem 1 </a>
+          <a
+            class="list-group-item"
+          >Subitem 2</a>
+          <a
+            class="list-group-item"
+          >Subitem 3</a>
+        </div>
+      </span>
+
+      <span
+        class="dropdown-2 dropdown-container"
+        [ngClass]="
+          (UI$ | async).sidePanel.dropDownStates[1].open
+          ? 'open'
+          : 'closed'
+        "
+      >
         <a
-          class="list-group-item"
-        >Subitem 2</a>
-        <a
-          class="list-group-item"
-        >Subitem 3</a>
-      </div>
+          (click)="toggleOpenDropDown(1)"
+          class="dropdown-button-custom list-group-item collapsed"
+        >
+          <i class="fa fa-line-chart"></i>
+          <span class="hidden-sm-down">Item 2</span>
+          <div class="toggle-arrow">
+            <i class="fa fa-angle-up up-arrow"></i>
+            <i class="fa fa-angle-down down-arrow"></i>
+          </div>
+        </a>
+        <div
+          class="dropdown"
+        >
+          <a
+            (click)="toggleOpenChild1()"
+            class="list-group-item"
+          >Subitem 1 </a>
+          <a
+            class="list-group-item"
+          >Subitem 2</a>
+          <a
+            class="list-group-item"
+          >Subitem 3</a>
+        </div>
+      </span>
 
       <a
         routerLinkActive="active"
