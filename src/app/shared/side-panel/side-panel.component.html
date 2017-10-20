@@ -7,6 +7,18 @@
      </div>
      <div class="list-group panel">
         <span
+          class="dropdown-container"
+        >
+          <a
+          routerLinkActive="active"
+          routerLink="/home"
+          class="dropdown-button-custom list-group-item collapsed"
+        ><i class="fa fa-industry"></i>
+          <span class="hidden-sm-down">Dashboard</span>
+          <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span
            class="dropdown-1 dropdown-container"
            [ngClass]="
            (UI$ | async).sidePanel.dropDownStates[0].open
@@ -18,8 +30,8 @@
               (click)="toggleOpenDropDown(0)"
               class="dropdown-button-custom list-group-item collapsed"
               >
-              <i class="fa fa-line-chart"></i>
-              <span class="hidden-sm-down">Item 1</span>
+              <i class="fa fa-home"></i>
+              <span class="hidden-sm-down">My Account</span>
               <div class="toggle-arrow">
                  <i class="fa fa-angle-up up-arrow"></i>
                  <i class="fa fa-angle-down down-arrow"></i>
@@ -29,14 +41,14 @@
               class="dropdown"
               >
               <a
+
                  class="list-group-item"
-                 >Subitem 1 </a>
+              ><i class="fa fa-user-plus">&nbsp;</i>
+                 Manage Users </a>
               <a
                  class="list-group-item"
-                 >Subitem 2</a>
-              <a
-                 class="list-group-item"
-                 >Subitem 3</a>
+              ><i class="fa fa-cog">&nbsp;</i>
+                 Settings</a>
            </div>
         </span>
         <span
@@ -72,19 +84,7 @@
                  >Subitem 3</a>
            </div>
         </span>
-        <span
-           class="dropdown-container"
-           >
-        <a
-           routerLinkActive="active"
-           routerLink="/home"
-           class="dropdown-button-custom list-group-item collapsed"
-           >
-        <i class="fa fa-home"></i>
-        <span class="hidden-sm-down">Home</span>
-        <i class="fa fa-angle-right"></i>
-        </a>
-        </span>
+
         <span
            class="dropdown-container"
            >
