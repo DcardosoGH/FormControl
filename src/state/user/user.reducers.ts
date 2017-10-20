@@ -1,0 +1,28 @@
+import {State, initialState } from './user.state';
+import * as UserActions from './user.actions';
+
+export type Action = UserActions.All;
+
+export default function UserReducer (state = initialState, action: Action) {
+  switch (action.type) {
+    case UserActions.USER_LOG_IN: {
+      const newState = Object.assign({}, state);
+      return {
+        ...newState,
+        User: {
+          email: action.paylad.email,
+          password: action.paylad.password,
+        }
+      };
+    }
+    case UserActions.USER_LOG_IN_SUCCESS: {
+      const newState = Object.assign({}, state);
+      newState.User.isAuth = true;
+      return newState;
+    }
+
+    default:
+      return state;
+
+  }
+}

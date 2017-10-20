@@ -1,17 +1,26 @@
 <div class="container login-container">
   <div class="row">
     <div class="col">
-      <form>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
           <label for="">Email</label>
-          <input type="email" class="form-control" name="email">
-          <small id="emailHelpId" class="form-text text-muted">Help text</small>
+          <input type="email" class="form-control" name="email" ngModel email required #email="ngModel">
+          <span *ngIf="!email.valid && email.touched" class="badge badge-danger">Please provide a valid email.</span>
         </div>
         <div class="form-group">
           <label for="">Password</label>
-          <input type="password" class="form-control" name="password">
+          <input type="password" class="form-control" name="password" ngModel password required #password="ngModel">
+          <span *ngIf="!password.valid && password.touched" class="badge badge-danger">Password is required!</span>
+        </div>
+        <div class="form-group text-center">
+          <button *ngIf="!f.valid" type="submit" [disabled]="true" class="btn btn-block btn-dark text-center">Login</button>
+          <button *ngIf="f.valid" type="submit" class="btn btn-block btn-outline-success text-center">Login</button>
         </div>
       </form>
+      <div class="progress">
+        <div [hidden]="!f.submitted" class="progress-bar bg-success" role="progressbar" style="max-width: 100%" #progressBar><span class="title">Signin in...</span></div>
+      </div>
+      <pre>{{ $User | async | json}} </pre>
     </div>
   </div>
 </div>
