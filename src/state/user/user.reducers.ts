@@ -21,6 +21,16 @@ export default function UserReducer (state = initialState, action: Action) {
       return newState;
     }
 
+    case UserActions.USER_LOG_OUT: {
+      const newState = Object.assign({}, state);
+      newState.User.isAuth = false;
+      return newState;
+    }
+
+    case UserActions.USER_CHECK_AUTH: {
+      return state.User.isAuth;
+    }
+
     default:
       return state;
 
