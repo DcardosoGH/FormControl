@@ -1,10 +1,12 @@
 <aside [ngClass]="'is-open-'+(UI$ | async).sidePanel.isOpen">
   <div class="sidebar">
-    <div class="list-group panel">
-      <img class="responsive img-round" src="">
+    <div class="list-group text-center user-group">
+      <img class="img-fluid rounded-circle" src="../../assets/images/user.png">
+      <br>
+     <h4>{{ (User$ | async).User.email}}</h4>
     </div>
     <div class="list-group panel">
-      <span
+      <!-- <span
         class="dropdown-1 dropdown-container"
         [ngClass]="
           (UI$ | async).sidePanel.dropDownStates[0].open
@@ -70,8 +72,7 @@
             class="list-group-item"
           >Subitem 3</a>
         </div>
-      </span>
-
+      </span> -->
       <span
         class="dropdown-container"
       >
