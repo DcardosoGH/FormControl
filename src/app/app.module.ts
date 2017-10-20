@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routes';
-import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 
 import todoListReducer from './../state/todo-list/todo-list.reducer';
@@ -27,7 +27,7 @@ import formReducer from './../state/form/form.reducer';
     HttpClientModule,
 
     routing,
-    HomeModule,
+    LoginModule,
     SharedModule,
 
     StoreModule.forRoot({
