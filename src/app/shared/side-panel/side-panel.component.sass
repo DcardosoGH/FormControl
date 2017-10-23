@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300')
+
 a
   cursor: pointer
 
+span
+  color:#A0C6C5
+  font-family: 'Open Sans', sans-serif
+  font-size: 18px
+  font-weight: bold
+
+i
+  color:#A0C6C5
+
 aside
-  background: #222
+  background: #001216
   height: 100%
   width: 0px
   transition: width 0.3s linear
   overflow: auto
+  border-right: 1px solid #222
 
   .toggle-sidepanel-button
     cursor: pointer
@@ -32,7 +44,7 @@ aside
 
   .list-group-item
     border-radius: 0
-    background-color: #222
+    background-color: #001216
     color: white
     border-left: 0
     border-right: 0
@@ -43,7 +55,7 @@ aside
       background-color: gray
 
     &:not(.collapsed)
-      background-color: #222
+      background-color: #001216
 
 
 

@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: 'todo-list', loadChildren: './todo-list/todo-list.module#TodoListModule' },
-  { path: 'graph', loadChildren: './graph/graph.module#GraphModule' },
+  { path: 'news', loadChildren: './news/news.module#NewsModule' },
+  { path: 'help', loadChildren: './help/help.module#HelpModule' },
 
   { path: '**',   redirectTo: '', pathMatch: 'full' }
 ];

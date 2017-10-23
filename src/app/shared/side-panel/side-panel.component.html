@@ -7,18 +7,6 @@
      </div>
      <div class="list-group panel">
         <span
-          class="dropdown-container"
-        >
-          <a
-          routerLinkActive="active"
-          routerLink="/home"
-          class="dropdown-button-custom list-group-item collapsed"
-        ><i class="fa fa-industry"></i>
-          <span class="hidden-sm-down">Dashboard</span>
-          <i class="fa fa-angle-right"></i>
-          </a>
-        </span>
-        <span
            class="dropdown-1 dropdown-container"
            [ngClass]="
            (UI$ | async).sidePanel.dropDownStates[0].open
@@ -30,7 +18,7 @@
               (click)="toggleOpenDropDown(0)"
               class="dropdown-button-custom list-group-item collapsed"
               >
-              <i class="fa fa-home"></i>
+              <img src="../assets/images/Home_x40_2xpng_3_.png" alt="">
               <span class="hidden-sm-down">My Account</span>
               <div class="toggle-arrow">
                  <i class="fa fa-angle-up up-arrow"></i>
@@ -50,7 +38,7 @@
               ><i class="fa fa-cog">&nbsp;</i>
                  Settings</a>
            </div>
-        </span>
+        </span>       
         <span
            class="dropdown-2 dropdown-container"
            [ngClass]="
@@ -63,8 +51,8 @@
               (click)="toggleOpenDropDown(1)"
               class="dropdown-button-custom list-group-item collapsed"
               >
-              <i class="fa fa-line-chart"></i>
-              <span class="hidden-sm-down">Item 2</span>
+              <img src="../assets/images/Briefcase_x40_2xpng_3_.png" alt="">
+              <span class="hidden-sm-down">Backtest</span>
               <div class="toggle-arrow">
                  <i class="fa fa-angle-up up-arrow"></i>
                  <i class="fa fa-angle-down down-arrow"></i>
@@ -75,13 +63,14 @@
               >
               <a
                  class="list-group-item"
-                 >Subitem 1 </a>
+              >
+                 <i class="fa fa-plus-circle">&nbsp;</i>
+                 Create backtest </a>
               <a
                  class="list-group-item"
-                 >Subitem 2</a>
-              <a
-                 class="list-group-item"
-                 >Subitem 3</a>
+              >
+              <i class="fa fa-eye">&nbsp;</i>
+              View backtest</a>
            </div>
         </span>
 
@@ -93,8 +82,8 @@
            routerLink="/about"
            class="dropdown-button-custom list-group-item collapsed"
            >
-        <i class="fa fa-film"></i>
-        <span class="hidden-sm-down">About</span>
+        <img src="../assets/images/Briefcase_x40_2xpng_3_.png" alt="">
+        <span class="hidden-sm-down">Portfolio</span>
         <i class="fa fa-angle-right"></i>
         </a>
         </span>
@@ -103,27 +92,40 @@
            >
         <a
            routerLinkActive="active"
-           routerLink="/todo-list"
+           routerLink="/news"
            class="dropdown-button-custom list-group-item collapsed"
            >
-        <i class="fa fa-list"></i>
-        <span class="hidden-sm-down">Todo List</span>
+        <img src="../assets/images/Newspaper_x40_2xpng_3_.png" alt="">
+        <span class="hidden-sm-down">News</span>
         <i class="fa fa-angle-right"></i>
         </a>
         </span>
         <span
-           class="dropdown-container"
-           >
-        <a
-           routerLinkActive="active"
-           routerLink="/graph"
-           class="dropdown-button-custom list-group-item collapsed"
-           >
-        <i class="fa fa-line-chart"></i>
-        <span class="hidden-sm-down">Graph</span>
-        <i class="fa fa-angle-right"></i>
-        </a>
-        </span>
+        class="dropdown-container"
+        >
+     <a
+        routerLinkActive="active"
+        routerLink="/help"
+        class="dropdown-button-custom list-group-item collapsed"
+        >
+     <img src="../assets/images/Help_x40_2xpng_3_.png" alt="">
+     <span class="hidden-sm-down">Help</span>
+     <i class="fa fa-angle-right"></i>
+     </a>
+     </span>
+        <span
+        class="dropdown-container"
+        >
+     <a
+        routerLinkActive="active"
+        routerLink="/todo-list"
+        class="dropdown-button-custom list-group-item collapsed"
+        >
+     <i class="fa fa-list"></i>
+     <span class="hidden-sm-down">Todo List</span>
+     <i class="fa fa-angle-right"></i>
+     </a>
+     </span>
         <span
            class="dropdown-container"
            >

@@ -1,10 +1,10 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { GraphComponent } from './graph.component';
+import { HelpComponent } from './help.component';
 
 const routes: Routes = [
-  { path: '', component: GraphComponent }
+  { path: '', component: HelpComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
