@@ -4,6 +4,7 @@ export interface State {
     password: string,
     isAuth: Boolean,
   };
+  Loading: Boolean;
 }
 
 export const initialState: State = {
@@ -11,5 +12,6 @@ export const initialState: State = {
     email: '',
     password: '',
     isAuth: false
-  }
+  },
+  Loading: false
 };

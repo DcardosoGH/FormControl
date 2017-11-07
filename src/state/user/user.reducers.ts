@@ -9,16 +9,19 @@ export default function UserReducer (state = initialState, action: Action) {
       const newState = Object.assign({}, state);
       return {
         ...newState,
-        User: {
-          email: action.paylad.email,
-          password: action.paylad.password,
-        }
+        Loading: true,
       };
     }
     case UserActions.USER_LOG_IN_SUCCESS: {
       const newState = Object.assign({}, state);
-      newState.User.isAuth = true;
-      return newState;
+      return {
+        ...newState,
+        User: {
+          email: action.payload.email,
+          password: action.payload.password,
+        },
+        Loading: false,
+      };
     }
 
     case UserActions.USER_LOG_OUT: {

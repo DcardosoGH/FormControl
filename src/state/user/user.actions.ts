@@ -7,7 +7,7 @@ export const USER_CHECK_AUTH = '[USER] CHECK AUTH';
 
 export class UserLogin implements Action {
   readonly type = USER_LOG_IN;
-  constructor(public paylad: {email: string, password: string}) {}
+  constructor(public payload: {email: string, password: string}) {}
 }
 
 export class UserLogout implements Action {
@@ -16,6 +16,7 @@ export class UserLogout implements Action {
 
 export class UserLoginSuccess implements Action {
   readonly type = USER_LOG_IN_SUCCESS;
+  constructor(public payload: {email: string, password: string}) {}
 }
 
 export class UserCheckAuth implements Action {
