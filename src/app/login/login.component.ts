@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { State } from '../../state/user/user.state';
 import * as UserActions from '../../state/user/user.actions';
 
@@ -26,12 +26,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.store.dispatch(new UserActions.UserLogin({email: this.loginForm.value.email, password: this.loginForm.value.password}));
-    if (f.valid) {
-      this.store.dispatch(new UserActions.UserLoginSuccess());
-    }
-    setTimeout(() => {
-      this.router.navigate(['home']);
-    },
-    1500);
+    // if (f.valid) {
+    //   this.store.dispatch(new UserActions.UserLoginSuccess());
+    // }
+    // setTimeout(() => {
+    //   this.router.navigate(['home']);
+    // },
+    // 1500);
   }
 }

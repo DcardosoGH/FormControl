@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 
 import todoListReducer from './../state/todo-list/todo-list.reducer';
 import { TodoListEffects } from './../state/todo-list/todo-list.effects';
+import { UserEffects } from './../state/User/User.effects';
 import UIReducer from './../state/UI/UI.reducer';
 import formReducer from './../state/form/form.reducer';
 import UserReducer from './../state/user/user.reducers';
@@ -37,7 +38,7 @@ import UserReducer from './../state/user/user.reducers';
       aboutFormStore: formReducer,
       UserStore: UserReducer
     }),
-    EffectsModule.forRoot([TodoListEffects]),
+    EffectsModule.forRoot([TodoListEffects, UserEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [appRoutingProviders],
