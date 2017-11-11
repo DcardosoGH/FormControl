@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    this.store.dispatch(new UserActions.UserLogin({email: this.loginForm.value.email, password: this.loginForm.value.password}));
+    this.store.dispatch(new UserActions.UserLogin({username: this.loginForm.value.username, password: this.loginForm.value.password}));
     // if (f.valid) {
     //   this.store.dispatch(new UserActions.UserLoginSuccess());
     // }
@@ -34,4 +34,5 @@ export class LoginComponent implements OnInit {
     // },
     // 1500);
   }
+
 }

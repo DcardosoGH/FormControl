@@ -17,7 +17,7 @@ export default function UserReducer (state = initialState, action: Action) {
       return {
         ...newState,
         User: {
-          email: action.payload.email,
+          username: action.payload.username,
           password: action.payload.password,
         },
         Loading: false,
@@ -29,7 +29,7 @@ export default function UserReducer (state = initialState, action: Action) {
       return {
         ...newState,
         User: {
-          email: '',
+          username: '',
           password: '',
           isAuth: false
         }

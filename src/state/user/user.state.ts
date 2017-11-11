@@ -1,6 +1,6 @@
 export interface State {
   User: {
-    email: string,
+    username: string,
     password: string,
     isAuth: Boolean,
   };
@@ -9,7 +9,7 @@ export interface State {
 
 export const initialState: State = {
   User: {
-    email: '',
+    username: '',
     password: '',
     isAuth: false
   },

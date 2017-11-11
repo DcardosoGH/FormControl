@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
+import * as Encript from './../../state/user/sha2';
 
 import * as UserActions from './user.actions';
 
@@ -16,6 +17,8 @@ export type Action = UserActions.All;
 
 @Injectable()
 export class UserEffects {
+
+
 
   constructor(
     private http: HttpClient,
@@ -30,10 +33,8 @@ export class UserEffects {
         .do(data => console.log('payload', action['payload']))
         .do(data => this.router.navigate(['home']))
         .map(data => ({ type: UserActions.USER_LOG_IN_SUCCESS, payload: {
-          email: action['payload'].email,
+          username: action['payload'].username,
           password: action['payload'].password,
-        } }))
-
-        // .catch(() => of({ type: UserActions.ADD_TODO_FAIL }))
+        } }))        // .catch(() => of({ type: UserActions.ADD_TODO_FAIL }))
     );
 }
