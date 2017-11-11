@@ -3,16 +3,17 @@
 a
   cursor: pointer
 
-span
-  color:#A0C6C5
-  font-family: 'Open Sans', sans-serif
-  font-size: 18px
-  font-weight: bold
+// span
+//   color:#A0C6C5
+//   font-family: 'Open Sans', sans-serif
+//   font-size: 18px
+//   font-weight: bold
 
 i
   color:#A0C6C5
 
 aside
+  padding-right: 5px
   background: #001216
   height: 100%
   width: 0px
@@ -41,14 +42,20 @@ aside
 
   h4
     color: white
+    font-size: 15px
+
+  .list-group
+    border-left: 0
+    border-right: 0
+    border-color: #2c2c2c
+    margin-bottom: 10px
+    border-bottom: 3px solid
 
   .list-group-item
     border-radius: 0
     background-color: #001216
     color: white
-    border-left: 0
-    border-right: 0
-    border-color: #2c2c2c
+    border: none
     white-space: nowrap
 
     &.active
@@ -60,6 +67,10 @@ aside
 
 
   .dropdown-container
+    img
+        max-height: 20px
+        max-width: 21px
+
     .dropdown
       transition: 0.5s linear all
 
@@ -70,6 +81,7 @@ aside
       display: flex
       justify-content: space-between
       align-items: center
+      
 
     &.open
       .down-arrow
@@ -85,8 +97,9 @@ aside
       .dropdown
         max-height: 0
 
-.user-group
-  margin-bottom: 10px
+
+
+
 
 
 
