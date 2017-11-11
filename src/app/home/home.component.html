@@ -16,6 +16,12 @@
       <p class="show-on-mobile-only">
         I'm visible on small screens
       </p>
+
+      <input type="text" [(ngModel)]="password">
+      <button (click)="encode()">Encode me</button>
+      <br>
+      <input type="text" [(ngModel)]="B64_Password" >
+
     </div>
 </div>
 

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +11,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
 
     routing,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   declarations: [HomeComponent]
 })
