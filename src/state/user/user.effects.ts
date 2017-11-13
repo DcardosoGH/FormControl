@@ -3,7 +3,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
@@ -18,36 +18,49 @@ export type Action = UserActions.All;
 @Injectable()
 export class UserEffects {
 
+  LoginRequest: Function;
+  EncodeLogin: Function;
+
   constructor(
     private http: HttpClient,
     private actions$: Actions,
     private router: Router
-  ) {}
+  ) {
+    this.LoginRequest = (username, password) => {
+      const encPass = Encript.b64_sha512(password);
+      return {
+        "ServerRequest":"LoginRequest",
+        "RequestData":{"LoginUser":username,
+        "LoginHashPassword":encPass,
+        "LoginPassword":null,
+        "LoginIIS":false},
+        "RequestSession":null
+      }
+    };
 
-  LoginRequest(username, password) {
-    const encPass = Encript.b64_sha512(password);
-    return {"ServerRequest":"LoginRequest",
-    "RequestData":{"LoginUser":username,
-    "LoginHashPassword":encPass,
-    "LoginPassword":null,
-    "LoginIIS":false},
-    "RequestSession":null
+    this.EncodeLogin = (req) => {
+      const encodedurl = "ajax_req=" + encodeURIComponent(req);
+      return encodedurl;
+    };
   }
-}
-
-  EncodeLogin(req) {
-    const encodedurl = "ajax_req=" + encodeURIComponent(req);
-    return encodedurl;
-  }
-
 
   @Effect() login$: Observable<Action> = this.actions$.ofType(UserActions.USER_LOG_IN)
     .mergeMap(action =>
       // [ Hack ] should typeckeck `payload`
-      this.http.get('https://jsonplaceholder.typicode.com/posts/1', action['payload'])
+      this.http.post(
+        'https://jsonplaceholder.typicode.com/posts/1',
+        this.EncodeLogin(
+          this.LoginRequest(
+            action['payload'].username,
+            action['payload'].password
+          )
+        ),
+        { headers: new HttpHeaders().set('Authorization', 'my-auth-token'), }
+      )
         .do(data => console.log('payload', action['payload']))
         .do(data => this.LoginRequest(action['payload'].username, action['payload'].password))
-        .do(data => this.router.navigate(['home']))
+        .do(data => this.LoginRequest(action['payload'].username, action['payload'].password))
+        // .do(data => this.router.navigate(['home']))
         .map(data => ({ type: UserActions.USER_LOG_IN_SUCCESS, payload: {
           username: action['payload'].username,
           password: action['payload'].password,
@@ -55,4 +68,5 @@ export class UserEffects {
 
         // .catch(() => of({ type: UserActions.ADD_TODO_FAIL }))
     );
+
 }
