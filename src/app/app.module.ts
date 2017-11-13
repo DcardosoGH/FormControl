@@ -10,13 +10,15 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routes';
-import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 
 import todoListReducer from './../state/todo-list/todo-list.reducer';
 import { TodoListEffects } from './../state/todo-list/todo-list.effects';
+import { UserEffects } from './../state/User/User.effects';
 import UIReducer from './../state/UI/UI.reducer';
 import formReducer from './../state/form/form.reducer';
+import UserReducer from './../state/user/user.reducers';
 
 @NgModule({
   declarations: [
@@ -27,15 +29,16 @@ import formReducer from './../state/form/form.reducer';
     HttpClientModule,
 
     routing,
-    HomeModule,
+    LoginModule,
     SharedModule,
 
     StoreModule.forRoot({
       todoListStore: todoListReducer,
       UIStore: UIReducer,
-      aboutFormStore: formReducer
+      aboutFormStore: formReducer,
+      UserStore: UserReducer
     }),
-    EffectsModule.forRoot([TodoListEffects]),
+    EffectsModule.forRoot([TodoListEffects, UserEffects]),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [appRoutingProviders],

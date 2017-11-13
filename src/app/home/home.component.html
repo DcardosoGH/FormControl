@@ -1,10 +1,10 @@
 <app-header [showSidepanelButton]="true"></app-header>
 <div class="container-fluid content-container">
   <div class="row">
-      <app-side-panel></app-side-panel>
+    <app-side-panel></app-side-panel>
   </div>
   <div class="container">
-    <!-- <div class="col">
+    <div class="col">
       <p>
         home works!
       </p>
@@ -16,31 +16,28 @@
       <p class="show-on-mobile-only">
         I'm visible on small screens
       </p>
-    </div> -->
-    <div class="row">
-        <div class="col">
-          1 of 4
-        </div>
-        <div class="col">
-          2 of 4
-        </div>
-        <div class="col">
-          3 of 4
-        </div>
-        <div class="col text-center">
-          4 of 4
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          1 of 3
-        </div>
-        <div class="col">
-          2 of 3
-        </div>
-        <div class="col">
-          3 of 3
-        </div>
-      </div>
-</div>
 
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="text" class="form-control" [(ngModel)]="password">
+        <button class="btn btn-success btn-sm" (click)="encode()">Encode me</button>
+      </div>
+
+      <div class="form-group">
+        <label for="">Encoded Password</label>
+        <input type="text" class="form-control" [(ngModel)]="B64_Password">
+      </div>
+
+      <div class="form-group">
+        <label for="">Server Request</label>
+        <textarea class="form-control" name="" id="" rows="3" [(ngModel)]="request" ></textarea>
+        <button class="btn btn-success btn-sm" (click)="encodeRequest()">Encode me</button>
+      </div>
+
+      <div class="form-group">
+        <label for="">Encoded URL</label>
+        <textarea class="form-control" name="" id="" rows="3" [(ngModel)]="encRequest" ></textarea>
+      </div>
+
+    </div>
+  </div>

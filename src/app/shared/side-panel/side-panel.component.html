@@ -1,69 +1,152 @@
 <aside [ngClass]="'is-open-'+(UI$ | async).sidePanel.isOpen">
   <div class="sidebar">
-    <div class="list-group panel">
-      <img class="responsive img-round" src="">
+    <div class="list-group text-center user-group">
+      <img class="img-fluid rounded-circle" src="../../assets/images/user.png">
+      <br>
+      <h4>{{ (User$ | async).User.username}}</h4>
     </div>
-    <div class="list-group panel">
-      <a
-        (click)="toggleOpenDropDown(0)"
-        class="list-group-item collapsed"
-      >
-        <i class="fa fa-line-chart"></i>
-        <span class="hidden-sm-down">Item 1</span>
-      </a>
-      <div
-        [ngClass]="
-          (UI$ | async).sidePanel.dropDownStates[0].open
-          ? 'open'
-          : 'collapse'
-        "
-      >
-        <a
-          (click)="toggleOpenChild1()"
-          class="list-group-item"
-        >Subitem 1 </a>
-        <a
-          class="list-group-item"
-        >Subitem 2</a>
-        <a
-          class="list-group-item"
-        >Subitem 3</a>
+      <div class="list-group">
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/home" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/home.png" alt="">
+            <span class="hidden-sm-down">Home</span>
+            <i></i>
+          </a>
+        </span>
+        <span class="dropdown-1 dropdown-container" [ngClass]="
+                 (UI$ | async).sidePanel.dropDownStates[0].open
+                 ? 'open'
+                 : 'closed'
+                 ">
+          <a (click)="toggleOpenDropDown(0)" class="dropdown-button-custom list-group-item collapsed">
+              <img src="../assets/images/account.png" alt="">
+            <span class="hidden-sm-down">My Account</span>
+            <div class="toggle-arrow">
+              <i class="fa fa-angle-down up-arrow"></i>
+              <i class="fa fa-angle-right down-arrow"></i>
+            </div>
+          </a>
+          <div class="dropdown">
+            <a class="list-group-item">
+              <i class="fa fa-user-plus">&nbsp;</i>
+              Manage Users </a>
+            <a class="list-group-item">
+              <i class="fa fa-cog">&nbsp;</i>
+              Settings</a>
+          </div>
+        </span>       
+
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/#" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/active.png" alt="">
+            <span class="hidden-sm-down">Active Products</span>
+            <i></i>
+          </a>
+        </span>
       </div>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/"
-        [routerLinkActiveOptions]="{exact: true}"
-        class="list-group-item collapsed"
-      >
-        <i class="fa fa-home"></i>
-        <span class="hidden-sm-down">Home</span>
-      </a>
+      <div class="list-group">
+        <span class="dropdown-2 dropdown-container" [ngClass]="
+          (UI$ | async).sidePanel.dropDownStates[1].open
+          ? 'open'
+          : 'closed'
+          ">
+          <a (click)="toggleOpenDropDown(1)" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/backtest.png" alt="">
+            <span class="hidden-sm-down">Backtesting</span>
+            <div class="toggle-arrow">
+              <i class="fa fa-angle-down up-arrow"></i>
+              <i class="fa fa-angle-right down-arrow"></i>
+            </div>
+          </a>
+          <div class="dropdown">
+            <a class="list-group-item">
+              <i class="fa fa-plus-circle">&nbsp;</i>
+              Create backtest </a>
+            <a class="list-group-item">
+              <i class="fa fa-eye">&nbsp;</i>
+              View backtest</a>
+          </div>
+        </span>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/about"
-        class="list-group-item collapsed"
-      >
-        <i class="fa fa-film"></i>
-        <span class="hidden-sm-down">About</span>
-      </a>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/about" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/investment.png" alt="">
+            <span class="hidden-sm-down">Investment</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/news" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/risk.png" alt="">
+            <span class="hidden-sm-down">Risk</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/evalu.png" alt="">
+            <span class="hidden-sm-down">Evaluation</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/sentiment.png" alt="">
+            <span class="hidden-sm-down">Sentiment</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+      </div>
 
-      <a
-        routerLinkActive="active"
-        routerLink="/todo-list"
-        class="list-group-item collapsed"
-      >
-        <i class="fa fa-list"></i>
-        <span class="hidden-sm-down">Todo List</span>
-      </a>
+      <div class="list-group">
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/news.png" alt="">
+            <span class="hidden-sm-down">News</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/quantlab.png" alt="">
+            <span class="hidden-sm-down">Quantum Lab</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/reporting.png" alt="">
+            <span class="hidden-sm-down">Reporting</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+        <span class="dropdown-container">
+          <a routerLinkActive="active" routerLink="/help" class="dropdown-button-custom list-group-item collapsed">
+            <img src="../assets/images/help.png" alt="">
+            <span class="hidden-sm-down">Help</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </span>
+      </div>
 
-    </div>
+
+      <!-- <span class="dropdown-container">
+        <a routerLinkActive="active" routerLink="/todo-list" class="dropdown-button-custom list-group-item collapsed">
+          <i class="fa fa-list"></i>
+          <span class="hidden-sm-down">Todo List</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </span> -->
+      <!-- <span class="dropdown-container">
+        <a (click)="onLogout()" class="dropdown-button-custom list-group-item collapsed">
+          <i class="fa fa-sign-out"></i>
+          <span class="hidden-sm-down">Logout</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </span> -->
+    
   </div>
-
-
   <hr>
-  <pre
-  style="overflow: hidden"
->{{(UI$ | async) | json}}</pre>
+  <pre style="overflow: hidden">{{(UI$ | async) | json}}</pre>
 </aside>

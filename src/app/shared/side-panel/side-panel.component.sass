@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300')
+
 a
   cursor: pointer
 
+// span
+//   color:#A0C6C5
+//   font-family: 'Open Sans', sans-serif
+//   font-size: 18px
+//   font-weight: bold
+
+i
+  color:#A0C6C5
+
 aside
-  background: #333
+  padding-right: 5px
+  background: #001216
   height: 100%
   width: 0px
   transition: width 0.3s linear
   overflow: auto
+  border-right: 1px solid #222
 
   .toggle-sidepanel-button
     cursor: pointer
@@ -21,66 +34,74 @@ aside
   position: flex
   overflow-y: auto
 
-  .list-group-item
-    border-radius: 0
-    background-color: #222
+  .img-fluid
+    max-width: 50%
+    height: auto
+    margin: auto
+    margin-top: 25px
+
+  h4
     color: white
+    font-size: 15px
+
+  .list-group
     border-left: 0
     border-right: 0
     border-color: #2c2c2c
+    margin-bottom: 10px
+    border-bottom: 3px solid
+
+  .list-group-item
+    border-radius: 0
+    background-color: #001216
+    color: white
+    border: none
     white-space: nowrap
 
     &.active
       background-color: gray
 
     &:not(.collapsed)
-      background-color: #222
+      background-color: #001216
 
-  .list-group
 
-    .list-group-item
-      &[aria-expanded="false"]::after
-        content: " \f0d7"
-        font-family: FontAwesome
-        display: inline
-        text-align: right
-        padding-left: 5px
 
-      &[aria-expanded="true"]
-        background-color: #222
-        &::after
-          content: " \f0da"
-          font-family: FontAwesome
-          display: inline
-          text-align: right
-          padding-left: 5px
+  .dropdown-container
+    img
+        max-height: 20px
+        max-width: 21px
 
-    .collapse
+    .dropdown
+      transition: 0.5s linear all
+
       .list-group-item
-        padding-left: 20px
+        padding-left: 40px
 
-      > .collapse
-        .list-group-item
-          padding-left: 30px
+    .dropdown-button-custom
+      display: flex
+      justify-content: space-between
+      align-items: center
+      
 
-        > .collapse .list-group-item
-          padding-left: 40px
+    &.open
+      .down-arrow
+        display: none
 
-  &.collapse
-    -webkit-transition-timing-function: ease
-    -o-transition-timing-function: ease
-    transition-timing-function: ease
-    -webkit-transition-duration: .2s
-    -o-transition-duration: .2s
-    transition-duration: .2s
+      .dropdown
+        max-height: 300px
 
-  &.collapsing
-    opacity: 0.8
-    width: 0
-    -webkit-transition-timing-function: ease-in
-    -o-transition-timing-function: ease-in
-    transition-timing-function: ease-in
-    -webkit-transition-property: width
-    -o-transition-property: width
-    transition-property: width
+    &.closed
+      .up-arrow
+        display: none
+
+      .dropdown
+        max-height: 0
+
+
+
+
+
+
+
+
 

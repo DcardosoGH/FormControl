@@ -7,9 +7,9 @@ export type Action = UIActions.All;
 export default function todoListReducer(state = intitialState, action: Action): State {
     switch (action.type) {
         case UIActions.TOGGLE_SIDE_PANEL: {
-            const newstate = Object.assign({}, state);
-            newstate.sidePanel.isOpen = !newstate.sidePanel.isOpen;
-            return newstate;
+            const newState = JSON.parse(JSON.stringify(state));
+            newState.sidePanel.isOpen = !newState.sidePanel.isOpen;
+            return newState;
         }
 
         case UIActions.TOGGLE_OPEN_NAV_DROPDOWN: {
@@ -21,7 +21,8 @@ export default function todoListReducer(state = intitialState, action: Action): 
             newState.sidePanel.dropDownStates[action.payload.i].open = !newState.sidePanel.dropDownStates[action.payload.i].open;
             return newState;
           } else {
-            // toggle child
+            // newState.sidePanel.dropDownStates[action.payload.i]
+            //   .children[j].open = !newState.sidePanel.dropDownStates[action.payload.i].children[j].open;
             return newState;
           }
         }
