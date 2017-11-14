@@ -65,11 +65,14 @@ export class UserEffects {
             )
           ),
           {
-            headers: new HttpHeaders()
-              .set("Content-Type", "application/x-www-form-urlencoded")
-              .set("responseType", "text")
+            headers: new HttpHeaders().set(
+              "Content-Type",
+              "application/x-www-form-urlencoded"
+            ),
+            responseType: "text"
           }
         )
+        .map(data => JSON.parse(data.replace("--------------", ""))) // transform to json
         .do(data => console.log("data", data))
         // .do(data => this.router.navigate(['home']))
         .map(data => ({
