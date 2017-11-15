@@ -1,26 +1,40 @@
-import {State, initialState } from './user.state';
-import * as UserActions from './user.actions';
+import { State, initialState } from "./user.state";
+import * as UserActions from "./user.actions";
 
 export type Action = UserActions.All;
 
-export default function UserReducer (state = initialState, action: Action) {
+export default function UserReducer(state = initialState, action: Action) {
   switch (action.type) {
     case UserActions.USER_LOG_IN: {
       const newState = Object.assign({}, state);
       return {
         ...newState,
-        Loading: true,
+        Loading: true
       };
     }
+
     case UserActions.USER_LOG_IN_SUCCESS: {
       const newState = Object.assign({}, state);
       return {
         ...newState,
         User: {
           username: action.payload.username,
-          password: action.payload.password,
+          password: action.payload.password
         },
-        Loading: false,
+        Loading: false
+      };
+    }
+
+    case UserActions.USER_LOG_IN_FAIL: {
+      const newState = Object.assign({}, state);
+      console.log("action.payload", action.payload);
+      return {
+        ...newState,
+        User: {
+          username: action.payload.username,
+          password: action.payload.password
+        },
+        Loading: false
       };
     }
 
@@ -29,8 +43,8 @@ export default function UserReducer (state = initialState, action: Action) {
       return {
         ...newState,
         User: {
-          username: '',
-          password: '',
+          username: "",
+          password: "",
           isAuth: false
         }
       };
@@ -42,6 +56,5 @@ export default function UserReducer (state = initialState, action: Action) {
 
     default:
       return state;
-
   }
 }
